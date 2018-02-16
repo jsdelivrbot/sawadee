@@ -1,0 +1,43 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+sawadee/dist
+sawadee/dist-server
+sawadee/tmp
+sawadee/out-tsc
+
+# dependencies
+sawadee/node_modules
+
+# IDEs and editors
+sawadee/.idea
+sawadee/.project
+sawadee/.classpath
+sawadee/.c9/
+sawadee/*.launch
+sawadee/.settings/
+sawadee/*.sublime-workspace
+
+# IDE - VSCode
+sawadee/.vscode/*
+sawadee/!.vscode/settings.json
+sawadee/!.vscode/tasks.json
+sawadee/!.vscode/launch.json
+sawadee/!.vscode/extensions.json
+
+# misc
+sawadee/.sass-cache
+sawadee/connect.lock
+sawadee/coverage
+sawadee/libpeerconnection.log
+sawadee/npm-debug.log
+sawadee/testem.log
+sawadee/typings
+
+# e2e
+sawadee/e2e/*.js
+sawadee/e2e/*.map
+
+# System Files
+sawadee/.DS_Store
+sawadee/Thumbs.db
