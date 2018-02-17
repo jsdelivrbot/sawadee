@@ -11,7 +11,11 @@
     "test": "node test.js"
   },
   "dependencies": {
-    "express": "^4.16.2"
+    "@types/jasmine": "^2.8.6",
+    "@types/mongodb": "^3.0.5",
+    "express": "^4.16.2",
+    "mongodb": "^3.0.2",
+    "typescript": "^2.7.2"
   },
   "repository": {
     "type": "git",
@@ -22,5 +26,8 @@
     "heroku",
     "express"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/es6-promise": "^3.3.0"
+  }
 }

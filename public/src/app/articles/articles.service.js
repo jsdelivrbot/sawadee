@@ -7,17 +7,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
-let AppComponent = class AppComponent {
-    constructor() {
-        this.title = 'app';
+require("rxjs/add/operator/map");
+let ArticlesService = class ArticlesService {
+    constructor(_http) {
+        this._http = _http;
+    }
+    getUsers() {
+        return this._http.get("/users")
+            .map(result => this.result = result.json().data);
     }
 };
-AppComponent = __decorate([
-    core_1.Component({
-        selector: 'app-root',
-        templateUrl: './app.component.html',
-        styleUrls: ['./app.component.css']
-    })
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+ArticlesService = __decorate([
+    core_1.Injectable()
+], ArticlesService);
+exports.ArticlesService = ArticlesService;
+//# sourceMappingURL=articles.service.js.map

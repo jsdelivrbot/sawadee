@@ -7,17 +7,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
-let AppComponent = class AppComponent {
-    constructor() {
-        this.title = 'app';
+let ArticlesComponent = class ArticlesComponent {
+    // Create an instance of the DataService through dependency injection
+    constructor(_articlesService) {
+        this._articlesService = _articlesService;
+        // Access the Data Service's getUsers() method we defined
+        this._articlesService.getUsers()
+            .subscribe(res => this.users = res);
     }
 };
-AppComponent = __decorate([
+ArticlesComponent = __decorate([
     core_1.Component({
-        selector: 'app-root',
-        templateUrl: './app.component.html',
-        styleUrls: ['./app.component.css']
+        selector: 'articles',
+        templateUrl: './articles.component.html',
+        styleUrls: ['./articles.component.css']
     })
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+], ArticlesComponent);
+exports.ArticlesComponent = ArticlesComponent;
+//# sourceMappingURL=articles.component.js.map
