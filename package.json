@@ -1,0 +1,26 @@
+{
+  "name": "sawadee",
+  "version": "0.3.0",
+  "description": "Sawadee",
+  "engines": {
+    "node": "8.9.4"
+  },
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liranAsh/sawadee.git"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
+}

@@ -8,6 +8,7 @@ public/out-tsc
 
 # dependencies
 public/node_modules
+node_modules
 
 # IDEs and editors
 public/.idea
