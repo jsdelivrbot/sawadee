@@ -12,17 +12,23 @@ const app_component_1 = require("./app.component");
 const http_1 = require("@angular/http");
 const articles_service_1 = require("./articles/articles.service");
 const articles_component_1 = require("./articles/articles.component");
+const main_page_component_1 = require("./main_page/main-page.component");
+const animations_1 = require("@angular/platform-browser/animations");
+const angular4_carousel_1 = require("angular4-carousel");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     core_1.NgModule({
         declarations: [
             app_component_1.AppComponent,
+            main_page_component_1.MainPageComponent,
             articles_component_1.ArticlesComponent
         ],
         imports: [
             platform_browser_1.BrowserModule,
-            http_1.HttpModule
+            animations_1.BrowserAnimationsModule,
+            http_1.HttpModule,
+            angular4_carousel_1.CarouselModule
         ],
         providers: [articles_service_1.ArticlesService],
         bootstrap: [app_component_1.AppComponent]
