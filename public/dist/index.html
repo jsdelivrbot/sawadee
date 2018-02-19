@@ -15,7 +15,7 @@
 
 <!-- Hammer JS Touch Emulator: Uncomment if for desktop -->
 <script>
-  if (screen && screen.width < 780) {
+  if (/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
     var head = document.getElementsByTagName('head')[0];
 
     var script = document.createElement('script');
