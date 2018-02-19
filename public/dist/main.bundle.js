@@ -202,6 +202,7 @@ var CarouselComponent = /** @class */ (function () {
         this.carouselService = carouselService;
         this.windowWidthService = windowWidthService;
         this.currentSlide = 0;
+        this.screenWidth = screen.width;
     }
     CarouselComponent.prototype.ngOnInit = function () {
         this.initData();
@@ -264,11 +265,14 @@ var CarouselComponent = /** @class */ (function () {
         }, delay);
     };
     CarouselComponent.prototype.disableCarouselNavBtns = function () {
+        console.log(screen);
         if (!this.config.animation) {
             return;
         }
-        this.carouselArrowsComponent.disableNavButtons();
         this.pinsComponent.disableNavButtons();
+        if (this.carouselArrowsComponent) {
+            this.carouselArrowsComponent.disableNavButtons();
+        }
     };
     CarouselComponent.prototype.ngOnDestroy = function () {
         if (this.autoplayIntervalId) {
@@ -313,7 +317,7 @@ exports.CarouselComponent = CarouselComponent;
 /***/ "./src/app/angular4-carousel/src/app/components/carousel/carousel.template.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"carousel-wrapper\" appCarouselHandler (handleAutoplay)=\"onHandleAutoplay($event)\">\r\n  <carousel-slide\r\n       *ngFor=\"let img of loadedImages; let i = index\"\r\n       [src]=\"img\"\r\n       [slideNo]=\"i\"\r\n       [isHidden]=\"i !== 0\">\r\n  </carousel-slide>\r\n\r\n  <carousel-pins\r\n    *ngIf=\"galleryLength > 1\"\r\n    [images]=\"loadedImages\"\r\n    [currentSlide]=\"currentSlide\"\r\n    (changeSlide)=\"onChangeSlideIndex($event);\">\r\n  </carousel-pins>\r\n\r\n  <carousel-arrows\r\n    *ngIf=\"galleryLength > 1\"\r\n    (changeSlide)=\"onChangeSlide($event);\"></carousel-arrows>\r\n</div>\r\n"
+module.exports = "<div class=\"carousel-wrapper\" appCarouselHandler (handleAutoplay)=\"onHandleAutoplay($event)\">\r\n  <carousel-slide\r\n       *ngFor=\"let img of loadedImages; let i = index\"\r\n       [src]=\"img\"\r\n       [slideNo]=\"i\"\r\n       (swiperight)=\"onChangeSlide('next')\"\r\n       (swipeleft)=\"onChangeSlide('prev')\"\r\n       [isHidden]=\"i !== 0\">\r\n  </carousel-slide>\r\n\r\n  <carousel-pins\r\n    *ngIf=\"galleryLength > 1\"\r\n    [images]=\"loadedImages\"\r\n    [currentSlide]=\"currentSlide\"\r\n    (changeSlide)=\"onChangeSlideIndex($event);\">\r\n  </carousel-pins>\r\n\r\n  <carousel-arrows\r\n    *ngIf=\"galleryLength > 1 && screenWidth > 480\"\r\n    (changeSlide)=\"onChangeSlide($event);\"></carousel-arrows>\r\n</div>\r\n"
 
 /***/ }),
 

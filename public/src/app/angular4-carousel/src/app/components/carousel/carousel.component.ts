@@ -26,6 +26,7 @@ export class CarouselComponent implements OnInit, OnDestroy {
   public loadedImages: string[];
   public galleryLength: number;
   public currentSlide = 0;
+  public screenWidth: number = screen.width;
 
   constructor(private carouselService: CarouselService, private windowWidthService: WindowWidthService) { }
 
@@ -107,12 +108,15 @@ export class CarouselComponent implements OnInit, OnDestroy {
   }
 
   private disableCarouselNavBtns(): void {
+    console.log(screen)
     if (!this.config.animation) {
       return;
     }
 
-    this.carouselArrowsComponent.disableNavButtons();
     this.pinsComponent.disableNavButtons();
+    if (this.carouselArrowsComponent) {
+      this.carouselArrowsComponent.disableNavButtons();
+    }
   }
 
   ngOnDestroy() {

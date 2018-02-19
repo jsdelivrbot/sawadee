@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>Sawadee</title>
   <base href="/">
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -12,4 +12,13 @@
 <body>
   <app-root></app-root>
 </body>
+
+<!-- Hammer JS Touch Emulator: Uncomment if for desktop -->
+<script>
+  console.log(screen)
+  if (screen && screen.width < 480) {
+    document.write('<script type="text/javascript" src="http://cdn.rawgit.com/hammerjs/touchemulator/master/touch-emulator.js"><\/script>');
+    TouchEmulator();
+  }
+</script>
 </html>

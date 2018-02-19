@@ -3,6 +3,8 @@
        *ngFor="let img of loadedImages; let i = index"
        [src]="img"
        [slideNo]="i"
+       (swiperight)="onChangeSlide('next')"
+       (swipeleft)="onChangeSlide('prev')"
        [isHidden]="i !== 0">
   </carousel-slide>
 
@@ -14,6 +16,6 @@
   </carousel-pins>
 
   <carousel-arrows
-    *ngIf="galleryLength > 1"
+    *ngIf="galleryLength > 1 && screenWidth > 480"
     (changeSlide)="onChangeSlide($event);"></carousel-arrows>
 </div>

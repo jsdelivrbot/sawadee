@@ -52,6 +52,9 @@ let CarouselComponent = class CarouselComponent {
         this.carouselHandlerDirective.setNewSlide(this.currentSlide, direction);
         this.disableCarouselNavBtns();
     }
+    sw() {
+        console.log("sdasdsadsadas");
+    }
     onChangeSlideIndex(index) {
         if (index === this.currentSlide) {
             return;
