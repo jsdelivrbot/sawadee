@@ -16,7 +16,7 @@
 <!-- Hammer JS Touch Emulator: Uncomment if for desktop -->
 <script>
   if (screen && screen.width < 480) {
-    alert("Enter if")
+
     var head = document.getElementsByTagName('head')[0];
 
     var script = document.createElement('script');
@@ -24,6 +24,7 @@
     script.type = 'text/javascript';
 
     head.appendChild(script);
+    alert("Enter if")
     script.onload = function () {
       alert("some")
       TouchEmulator();
