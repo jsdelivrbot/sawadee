@@ -15,7 +15,7 @@
 
 <!-- Hammer JS Touch Emulator: Uncomment if for desktop -->
 <script>
-  if (/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  if (screen && screen.width < 480) {
     var head = document.getElementsByTagName('head')[0];
 
     var script = document.createElement('script');
@@ -25,6 +25,7 @@
     head.appendChild(script);
     script.onload = function () {
       TouchEmulator();
+      alert("some")
     };
   }
 </script>
