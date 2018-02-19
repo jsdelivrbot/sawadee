@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>Sawadee</title>
   <base href="/">
+  <!--<script src="../node_modules/hammerjs/hammer.js"></script>-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -19,13 +20,13 @@
 
     var head = document.getElementsByTagName('head')[0];
 
-    var script = document.createElement('script');
-    script.src = "http://cdn.rawgit.com/hammerjs/touchemulator/master/touch-emulator.js";
-    script.type = 'text/javascript';
+    var scriptTouch = document.createElement('script');
+    scriptTouch.src = "http://cdn.rawgit.com/hammerjs/touchemulator/master/touch-emulator.js";
+    scriptTouch.type = 'text/javascript';
 
-    head.appendChild(script);
-    alert("Enter if")
-    script.onload = function () {
+    head.appendChild(scriptTouch);
+    alert("Before on load")
+    scriptTouch.onload = function () {
       alert("some")
       TouchEmulator();
     };
