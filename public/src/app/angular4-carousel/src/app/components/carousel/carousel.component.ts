@@ -78,6 +78,10 @@ export class CarouselComponent implements OnInit, OnDestroy {
     this.disableCarouselNavBtns();
   }
 
+  public swipe(direction: string) {
+    alert(direction)
+  }
+
   public onChangeSlideIndex(index: number): void {
     if (index === this.currentSlide) {
       return;

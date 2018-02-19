@@ -3,8 +3,8 @@
        *ngFor="let img of loadedImages; let i = index"
        [src]="img"
        [slideNo]="i"
-       (swiperight)="onChangeSlide('next')"
-       (swipeleft)="onChangeSlide('prev')"
+       (swiperight)="swipe('next')"
+       (swipeleft)="swipe('prev')"
        [isHidden]="i !== 0">
   </carousel-slide>
 
