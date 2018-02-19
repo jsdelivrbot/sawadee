@@ -26,10 +26,10 @@
 
     head.appendChild(scriptTouch);
     alert("Before on load")
-    scriptTouch.onload = function () {
+    scriptTouch.addEventListener("load", function () {
       alert("some")
       TouchEmulator();
-    };
+    })
   }
 </script>
 </html>
