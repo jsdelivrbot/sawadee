@@ -14,7 +14,7 @@ const articles_service_1 = require("./articles/articles.service");
 const articles_component_1 = require("./articles/articles.component");
 const main_page_component_1 = require("./main_page/main-page.component");
 const animations_1 = require("@angular/platform-browser/animations");
-const angular4_carousel_1 = require("angular4-carousel");
+const angular4_carousel_1 = require("./angular4-carousel");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([

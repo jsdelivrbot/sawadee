@@ -338,7 +338,7 @@ exports.SlideComponent = slide_1.SlideComponent;
 /***/ "./src/app/angular4-carousel/src/app/components/carousel/pins/assets/pins.styles.scss":
 /***/ (function(module, exports) {
 
-module.exports = ".carousel-nav-list {\n  position: absolute;\n  left: 0;\n  right: 0;\n  bottom: 5%;\n  margin: 0;\n  text-align: center; }\n  .carousel-nav-list__item {\n    display: inline-block;\n    margin: 0 6px;\n    width: 15px;\n    height: 15px;\n    border-radius: 50%;\n    background-color: #ffffff;\n    cursor: pointer;\n    opacity: 0.6; }\n  .carousel-nav-list__item:hover {\n      opacity: 0.9; }\n  .carousel-nav-list__item--active {\n      opacity: 0.9; }\n  .carousel-nav-list__item--current {\n    background-color: #e55342;\n    opacity: 1; }\n  .carousel-nav-list__item--disabled {\n    pointer-events: none; }\n"
+module.exports = "ul {\n  padding: 0; }\n\n.carousel-nav-list {\n  position: absolute;\n  left: 0;\n  right: 0;\n  bottom: 5%;\n  margin: 0;\n  padding: 0;\n  text-align: center; }\n\n.carousel-nav-list__item {\n    display: inline-block;\n    margin: 0 6px;\n    width: 15px;\n    height: 15px;\n    border-radius: 50%;\n    background-color: #ffffff;\n    cursor: pointer;\n    opacity: 0.6; }\n\n.carousel-nav-list__item:hover {\n      opacity: 0.9; }\n\n.carousel-nav-list__item--active {\n      opacity: 0.9; }\n\n.carousel-nav-list__item--current {\n    background-color: #e55342;\n    opacity: 1; }\n\n.carousel-nav-list__item--disabled {\n    pointer-events: none; }\n"
 
 /***/ }),
 

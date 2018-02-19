@@ -7,30 +7,33 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
-const angular4_carousel_1 = require("../angular4-carousel");
-let MainPageComponent = class MainPageComponent {
+const services_1 = require("../services");
+let AppComponent = class AppComponent {
     constructor() {
         this.imageSources = [
-            'https://www.chabadthailand.co.il/wp-content/uploads/2017/04/slider7-high.jpg',
-            'https://images.haarets.co.il/image/upload/w_679,h_384,q_auto,c_fill,f_auto/fl_any_format.preserve_transparency.progressive:none/v1514363195/1.5264942.4101423884.jpg'
+            'http://www.violinshoptampa.com/assets/images/Panorama2a.jpg',
+            'http://gomighty.com/wp-content/themes/gomighty/lib/goal_images/files/SMusicPianoAntiqueshutterstock_-1920.jpg',
+            'https://d1llvcsapfiksz.cloudfront.net/vendors/samplephonics/deep-sax/images/DeepSax_mobile.jpg',
+            'https://www.abamet.ru/images/press/haas/press-releases/2013/gaboi-rigoutat.jpg'
         ];
+        // example config
         this.config = {
             verifyBeforeLoad: true,
-            log: false,
+            log: true,
             animation: true,
-            animationType: angular4_carousel_1.AnimationConfig.SLIDE,
+            animationType: services_1.AnimationConfig.SLIDE,
             autoplay: true,
-            autoplayDelay: 4000,
+            autoplayDelay: 2000,
             stopAutoplayMinWidth: 768
         };
     }
 };
-MainPageComponent = __decorate([
+AppComponent = __decorate([
     core_1.Component({
-        selector: 'main-page',
-        templateUrl: './main-page.component.html',
-        styleUrls: ['./main-page.component.css']
+        selector: 'app-root',
+        templateUrl: 'app.template.html',
+        styleUrls: ['assets/app.styles.scss']
     })
-], MainPageComponent);
-exports.MainPageComponent = MainPageComponent;
-//# sourceMappingURL=main-page.component.js.map
+], AppComponent);
+exports.AppComponent = AppComponent;
+//# sourceMappingURL=app.component.js.map

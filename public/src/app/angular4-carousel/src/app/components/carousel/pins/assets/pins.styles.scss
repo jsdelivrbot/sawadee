@@ -1,11 +1,16 @@
 $color-red: #e55342;
 
+ul {
+  padding: 0;
+}
+
 .carousel-nav-list {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 5%;
   margin: 0;
+  padding: 0;
   text-align: center;
 
   &__item {
