@@ -18,39 +18,36 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /***/ }),
 
 /***/ "./src/app/angular4-carousel/index.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_app_index__ = __webpack_require__("./src/app/angular4-carousel/src/app/index.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_app_services__ = __webpack_require__("./src/app/angular4-carousel/src/app/services/index.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_app_services_declarations__ = __webpack_require__("./src/app/angular4-carousel/src/app/services/declarations/index.ts");
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__src_app_index__["a"]; });
-/* unused harmony reexport CarouselService */
-/* unused harmony reexport WindowWidthService */
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_2__src_app_services_declarations__["a"]; });
 
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var index_1 = __webpack_require__("./src/app/angular4-carousel/src/app/index.ts");
+exports.CarouselModule = index_1.CarouselModule;
+var services_1 = __webpack_require__("./src/app/angular4-carousel/src/app/services/index.ts");
+exports.CarouselService = services_1.CarouselService;
+exports.WindowWidthService = services_1.WindowWidthService;
+var declarations_1 = __webpack_require__("./src/app/angular4-carousel/src/app/services/declarations/index.ts");
+exports.AnimationConfig = declarations_1.AnimationConfig;
 
 
 /***/ }),
 
 /***/ "./src/app/angular4-carousel/src/app/components/app.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services__ = __webpack_require__("./src/app/angular4-carousel/src/app/services/index.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var services_1 = __webpack_require__("./src/app/angular4-carousel/src/app/services/index.ts");
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
         this.imageSources = [
@@ -64,14 +61,14 @@ var AppComponent = /** @class */ (function () {
             verifyBeforeLoad: true,
             log: true,
             animation: true,
-            animationType: __WEBPACK_IMPORTED_MODULE_1__services__["a" /* AnimationConfig */].SLIDE,
+            animationType: services_1.AnimationConfig.SLIDE,
             autoplay: true,
             autoplayDelay: 2000,
             stopAutoplayMinWidth: 768
         };
     }
     AppComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+        core_1.Component({
             selector: 'app-root',
             template: __webpack_require__("./src/app/angular4-carousel/src/app/components/app.template.html"),
             styles: [__webpack_require__("./src/app/angular4-carousel/src/app/components/assets/app.styles.scss")]
@@ -79,7 +76,7 @@ var AppComponent = /** @class */ (function () {
     ], AppComponent);
     return AppComponent;
 }());
-
+exports.AppComponent = AppComponent;
 
 
 /***/ }),
@@ -99,11 +96,10 @@ module.exports = ".wrapper {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n
 /***/ }),
 
 /***/ "./src/app/angular4-carousel/src/app/components/carousel/arrows/arrows.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CarouselArrowsComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -113,11 +109,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 var CarouselArrowsComponent = /** @class */ (function () {
     function CarouselArrowsComponent() {
         this.DISABLE_ELEMENT_TIME = 750;
-        this.changeSlide = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* EventEmitter */]();
+        this.changeSlide = new core_1.EventEmitter();
     }
     CarouselArrowsComponent.prototype.onChangeSlide = function (direction) {
         this.changeSlide.emit(direction);
@@ -128,11 +125,11 @@ var CarouselArrowsComponent = /** @class */ (function () {
         setTimeout(function () { return _this.disableElement = false; }, this.DISABLE_ELEMENT_TIME);
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["K" /* Output */])(),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* EventEmitter */])
+        core_1.Output(),
+        __metadata("design:type", core_1.EventEmitter)
     ], CarouselArrowsComponent.prototype, "changeSlide", void 0);
     CarouselArrowsComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+        core_1.Component({
             selector: 'carousel-arrows',
             template: __webpack_require__("./src/app/angular4-carousel/src/app/components/carousel/arrows/arrows.template.html"),
             styles: [__webpack_require__("./src/app/angular4-carousel/src/app/components/carousel/arrows/assets/arrows.styles.scss")]
@@ -141,7 +138,7 @@ var CarouselArrowsComponent = /** @class */ (function () {
     ], CarouselArrowsComponent);
     return CarouselArrowsComponent;
 }());
-
+exports.CarouselArrowsComponent = CarouselArrowsComponent;
 
 
 /***/ }),
@@ -161,13 +158,13 @@ module.exports = ".carousel-nav__clickable-area {\n  position: absolute;\n  top:
 /***/ }),
 
 /***/ "./src/app/angular4-carousel/src/app/components/carousel/arrows/index.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__arrows_component__ = __webpack_require__("./src/app/angular4-carousel/src/app/components/carousel/arrows/arrows.component.ts");
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__arrows_component__["a"]; });
 
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var arrows_component_1 = __webpack_require__("./src/app/angular4-carousel/src/app/components/carousel/arrows/arrows.component.ts");
+exports.CarouselArrowsComponent = arrows_component_1.CarouselArrowsComponent;
 
 
 /***/ }),
@@ -180,16 +177,10 @@ module.exports = ".carousel-wrapper {\n  position: relative;\n  height: 100%;\n 
 /***/ }),
 
 /***/ "./src/app/angular4-carousel/src/app/components/carousel/carousel.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CarouselComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_takeWhile__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/takeWhile.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services__ = __webpack_require__("./src/app/angular4-carousel/src/app/services/index.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pins__ = __webpack_require__("./src/app/angular4-carousel/src/app/components/carousel/pins/index.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__arrows__ = __webpack_require__("./src/app/angular4-carousel/src/app/components/carousel/arrows/index.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__directives__ = __webpack_require__("./src/app/angular4-carousel/src/app/directives/index.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -199,12 +190,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+__webpack_require__("./node_modules/rxjs/_esm5/add/operator/takeWhile.js");
+var services_1 = __webpack_require__("./src/app/angular4-carousel/src/app/services/index.ts");
+var pins_1 = __webpack_require__("./src/app/angular4-carousel/src/app/components/carousel/pins/index.ts");
+var arrows_1 = __webpack_require__("./src/app/angular4-carousel/src/app/components/carousel/arrows/index.ts");
+var directives_1 = __webpack_require__("./src/app/angular4-carousel/src/app/directives/index.ts");
 var CarouselComponent = /** @class */ (function () {
     function CarouselComponent(carouselService, windowWidthService) {
         this.carouselService = carouselService;
@@ -287,36 +279,36 @@ var CarouselComponent = /** @class */ (function () {
         }
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* Input */])(),
+        core_1.Input(),
         __metadata("design:type", Array)
     ], CarouselComponent.prototype, "sources", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* Input */])(),
+        core_1.Input(),
         __metadata("design:type", Object)
     ], CarouselComponent.prototype, "config", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* ViewChild */])(Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* forwardRef */])(function () { return __WEBPACK_IMPORTED_MODULE_5__directives__["a" /* CarouselHandlerDirective */]; })),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_5__directives__["a" /* CarouselHandlerDirective */])
+        core_1.ViewChild(core_1.forwardRef(function () { return directives_1.CarouselHandlerDirective; })),
+        __metadata("design:type", directives_1.CarouselHandlerDirective)
     ], CarouselComponent.prototype, "carouselHandlerDirective", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_4__arrows__["a" /* CarouselArrowsComponent */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_4__arrows__["a" /* CarouselArrowsComponent */])
+        core_1.ViewChild(arrows_1.CarouselArrowsComponent),
+        __metadata("design:type", arrows_1.CarouselArrowsComponent)
     ], CarouselComponent.prototype, "carouselArrowsComponent", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_3__pins__["a" /* PinsComponent */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_3__pins__["a" /* PinsComponent */])
+        core_1.ViewChild(pins_1.PinsComponent),
+        __metadata("design:type", pins_1.PinsComponent)
     ], CarouselComponent.prototype, "pinsComponent", void 0);
     CarouselComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+        core_1.Component({
             selector: 'carousel',
             template: __webpack_require__("./src/app/angular4-carousel/src/app/components/carousel/carousel.template.html"),
             styles: [__webpack_require__("./src/app/angular4-carousel/src/app/components/carousel/assets/carousel.styles.scss")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__services__["b" /* CarouselService */], __WEBPACK_IMPORTED_MODULE_2__services__["c" /* WindowWidthService */]])
+        __metadata("design:paramtypes", [services_1.CarouselService, services_1.WindowWidthService])
     ], CarouselComponent);
     return CarouselComponent;
 }());
-
+exports.CarouselComponent = CarouselComponent;
 
 
 /***/ }),
@@ -329,22 +321,19 @@ module.exports = "<div class=\"carousel-wrapper\" appCarouselHandler (handleAuto
 /***/ }),
 
 /***/ "./src/app/angular4-carousel/src/app/components/carousel/index.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__carousel_component__ = __webpack_require__("./src/app/angular4-carousel/src/app/components/carousel/carousel.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__arrows__ = __webpack_require__("./src/app/angular4-carousel/src/app/components/carousel/arrows/index.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pins__ = __webpack_require__("./src/app/angular4-carousel/src/app/components/carousel/pins/index.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__slide__ = __webpack_require__("./src/app/angular4-carousel/src/app/components/carousel/slide/index.ts");
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_3__slide__["a"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__carousel_component__["a"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__arrows__["a"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_2__pins__["a"]; });
 
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var carousel_component_1 = __webpack_require__("./src/app/angular4-carousel/src/app/components/carousel/carousel.component.ts");
+exports.CarouselComponent = carousel_component_1.CarouselComponent;
+var arrows_1 = __webpack_require__("./src/app/angular4-carousel/src/app/components/carousel/arrows/index.ts");
+exports.CarouselArrowsComponent = arrows_1.CarouselArrowsComponent;
+var pins_1 = __webpack_require__("./src/app/angular4-carousel/src/app/components/carousel/pins/index.ts");
+exports.PinsComponent = pins_1.PinsComponent;
+var slide_1 = __webpack_require__("./src/app/angular4-carousel/src/app/components/carousel/slide/index.ts");
+exports.SlideComponent = slide_1.SlideComponent;
 
 
 /***/ }),
@@ -357,23 +346,22 @@ module.exports = "ul {\n  padding: 0; }\n\n.carousel-nav-list {\n  position: abs
 /***/ }),
 
 /***/ "./src/app/angular4-carousel/src/app/components/carousel/pins/index.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pins_component__ = __webpack_require__("./src/app/angular4-carousel/src/app/components/carousel/pins/pins.component.ts");
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__pins_component__["a"]; });
 
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var pins_component_1 = __webpack_require__("./src/app/angular4-carousel/src/app/components/carousel/pins/pins.component.ts");
+exports.PinsComponent = pins_component_1.PinsComponent;
 
 
 /***/ }),
 
 /***/ "./src/app/angular4-carousel/src/app/components/carousel/pins/pins.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PinsComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -383,11 +371,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 var PinsComponent = /** @class */ (function () {
     function PinsComponent() {
         this.DISABLE_ELEMENT_TIME = 750;
-        this.changeSlide = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* EventEmitter */]();
+        this.changeSlide = new core_1.EventEmitter();
     }
     PinsComponent.prototype.onChangeSlide = function (slideIndex) {
         this.changeSlide.emit(slideIndex);
@@ -398,19 +387,19 @@ var PinsComponent = /** @class */ (function () {
         setTimeout(function () { return _this.disableElement = false; }, this.DISABLE_ELEMENT_TIME);
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* Input */])(),
+        core_1.Input(),
         __metadata("design:type", Array)
     ], PinsComponent.prototype, "images", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* Input */])(),
+        core_1.Input(),
         __metadata("design:type", Number)
     ], PinsComponent.prototype, "currentSlide", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["K" /* Output */])(),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* EventEmitter */])
+        core_1.Output(),
+        __metadata("design:type", core_1.EventEmitter)
     ], PinsComponent.prototype, "changeSlide", void 0);
     PinsComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+        core_1.Component({
             selector: 'carousel-pins',
             template: __webpack_require__("./src/app/angular4-carousel/src/app/components/carousel/pins/pins.template.html"),
             styles: [__webpack_require__("./src/app/angular4-carousel/src/app/components/carousel/pins/assets/pins.styles.scss")]
@@ -419,7 +408,7 @@ var PinsComponent = /** @class */ (function () {
     ], PinsComponent);
     return PinsComponent;
 }());
-
+exports.PinsComponent = PinsComponent;
 
 
 /***/ }),
@@ -439,23 +428,22 @@ module.exports = ".slide {\n  position: absolute;\n  left: 0;\n  width: 100%;\n 
 /***/ }),
 
 /***/ "./src/app/angular4-carousel/src/app/components/carousel/slide/index.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__slide_component__ = __webpack_require__("./src/app/angular4-carousel/src/app/components/carousel/slide/slide.component.ts");
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__slide_component__["a"]; });
 
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var slide_component_1 = __webpack_require__("./src/app/angular4-carousel/src/app/components/carousel/slide/slide.component.ts");
+exports.SlideComponent = slide_component_1.SlideComponent;
 
 
 /***/ }),
 
 /***/ "./src/app/angular4-carousel/src/app/components/carousel/slide/slide.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SlideComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -465,24 +453,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 var SlideComponent = /** @class */ (function () {
     function SlideComponent() {
     }
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* Input */])(),
+        core_1.Input(),
         __metadata("design:type", String)
     ], SlideComponent.prototype, "src", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* Input */])(),
+        core_1.Input(),
         __metadata("design:type", Number)
     ], SlideComponent.prototype, "slideNo", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* Input */])(),
+        core_1.Input(),
         __metadata("design:type", Boolean)
     ], SlideComponent.prototype, "isHidden", void 0);
     SlideComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+        core_1.Component({
             selector: 'carousel-slide',
             template: __webpack_require__("./src/app/angular4-carousel/src/app/components/carousel/slide/slide.template.html"),
             styles: [__webpack_require__("./src/app/angular4-carousel/src/app/components/carousel/slide/assets/slide.styles.scss")]
@@ -491,7 +480,7 @@ var SlideComponent = /** @class */ (function () {
     ], SlideComponent);
     return SlideComponent;
 }());
-
+exports.SlideComponent = SlideComponent;
 
 
 /***/ }),
@@ -504,30 +493,27 @@ module.exports = "<img class=\"slide\" [src]=\"src\"\r\n     [class.slide--hidde
 /***/ }),
 
 /***/ "./src/app/angular4-carousel/src/app/components/index.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_component__ = __webpack_require__("./src/app/angular4-carousel/src/app/components/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__carousel__ = __webpack_require__("./src/app/angular4-carousel/src/app/components/carousel/index.ts");
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__app_component__["a"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_1__carousel__["b"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_1__carousel__["d"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__carousel__["a"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_1__carousel__["c"]; });
 
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var app_component_1 = __webpack_require__("./src/app/angular4-carousel/src/app/components/app.component.ts");
+exports.AppComponent = app_component_1.AppComponent;
+var carousel_1 = __webpack_require__("./src/app/angular4-carousel/src/app/components/carousel/index.ts");
+exports.CarouselComponent = carousel_1.CarouselComponent;
+exports.SlideComponent = carousel_1.SlideComponent;
+exports.CarouselArrowsComponent = carousel_1.CarouselArrowsComponent;
+exports.PinsComponent = carousel_1.PinsComponent;
 
 
 /***/ }),
 
 /***/ "./src/app/angular4-carousel/src/app/directives/carouselHandler.directive.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CarouselHandlerDirective; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services__ = __webpack_require__("./src/app/angular4-carousel/src/app/services/index.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -537,13 +523,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var services_1 = __webpack_require__("./src/app/angular4-carousel/src/app/services/index.ts");
 var CarouselHandlerDirective = /** @class */ (function () {
     function CarouselHandlerDirective(el, carouselService) {
         this.el = el;
         this.carouselService = carouselService;
-        this.handleAutoplay = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* EventEmitter */]();
+        this.handleAutoplay = new core_1.EventEmitter();
         this.currentSlide = 0;
     }
     CarouselHandlerDirective.prototype.setNewSlide = function (newSlide, direction) {
@@ -590,90 +577,84 @@ var CarouselHandlerDirective = /** @class */ (function () {
         });
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["K" /* Output */])(),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* EventEmitter */])
+        core_1.Output(),
+        __metadata("design:type", core_1.EventEmitter)
     ], CarouselHandlerDirective.prototype, "handleAutoplay", void 0);
     CarouselHandlerDirective = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["q" /* Directive */])({
+        core_1.Directive({
             selector: '[appCarouselHandler]'
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["r" /* ElementRef */], __WEBPACK_IMPORTED_MODULE_1__services__["b" /* CarouselService */]])
+        __metadata("design:paramtypes", [core_1.ElementRef, services_1.CarouselService])
     ], CarouselHandlerDirective);
     return CarouselHandlerDirective;
 }());
-
+exports.CarouselHandlerDirective = CarouselHandlerDirective;
 
 
 /***/ }),
 
 /***/ "./src/app/angular4-carousel/src/app/directives/index.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__carouselHandler_directive__ = __webpack_require__("./src/app/angular4-carousel/src/app/directives/carouselHandler.directive.ts");
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__carouselHandler_directive__["a"]; });
 
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var carouselHandler_directive_1 = __webpack_require__("./src/app/angular4-carousel/src/app/directives/carouselHandler.directive.ts");
+exports.CarouselHandlerDirective = carouselHandler_directive_1.CarouselHandlerDirective;
 
 
 /***/ }),
 
 /***/ "./src/app/angular4-carousel/src/app/index.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CarouselModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services__ = __webpack_require__("./src/app/angular4-carousel/src/app/services/index.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components__ = __webpack_require__("./src/app/angular4-carousel/src/app/components/index.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__directives__ = __webpack_require__("./src/app/angular4-carousel/src/app/directives/index.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var common_1 = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
+var services_1 = __webpack_require__("./src/app/angular4-carousel/src/app/services/index.ts");
+var components_1 = __webpack_require__("./src/app/angular4-carousel/src/app/components/index.ts");
+var directives_1 = __webpack_require__("./src/app/angular4-carousel/src/app/directives/index.ts");
 var CarouselModule = /** @class */ (function () {
     function CarouselModule() {
     }
     CarouselModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* NgModule */])({
+        core_1.NgModule({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_3__components__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_3__components__["c" /* CarouselComponent */],
-                __WEBPACK_IMPORTED_MODULE_3__components__["e" /* SlideComponent */],
-                __WEBPACK_IMPORTED_MODULE_3__components__["b" /* CarouselArrowsComponent */],
-                __WEBPACK_IMPORTED_MODULE_3__components__["d" /* PinsComponent */],
-                __WEBPACK_IMPORTED_MODULE_4__directives__["a" /* CarouselHandlerDirective */]
+                components_1.AppComponent,
+                components_1.CarouselComponent,
+                components_1.SlideComponent,
+                components_1.CarouselArrowsComponent,
+                components_1.PinsComponent,
+                directives_1.CarouselHandlerDirective
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1__angular_common__["a" /* CommonModule */]
+                common_1.CommonModule
             ],
-            exports: [__WEBPACK_IMPORTED_MODULE_3__components__["c" /* CarouselComponent */]],
-            providers: [__WEBPACK_IMPORTED_MODULE_2__services__["b" /* CarouselService */], __WEBPACK_IMPORTED_MODULE_2__services__["c" /* WindowWidthService */]],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_3__components__["a" /* AppComponent */]]
+            exports: [components_1.CarouselComponent],
+            providers: [services_1.CarouselService, services_1.WindowWidthService],
+            bootstrap: [components_1.AppComponent]
         })
     ], CarouselModule);
     return CarouselModule;
 }());
-
+exports.CarouselModule = CarouselModule;
 
 
 /***/ }),
 
 /***/ "./src/app/angular4-carousel/src/app/services/carousel.service.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CarouselService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__ = __webpack_require__("./node_modules/rxjs/_esm5/Subject.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -683,15 +664,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var Subject_1 = __webpack_require__("./node_modules/rxjs/_esm5/Subject.js");
 var CarouselService = /** @class */ (function () {
     function CarouselService() {
         this.imageLoadedCount = 0;
     }
     CarouselService.prototype.init = function (imageSources, config) {
         this.imageLoadedCount = 0;
-        this.imageLoad = new __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__["a" /* Subject */]();
+        this.imageLoad = new Subject_1.Subject();
         config.autoplayDelay = config.autoplayDelay < 1000 ? 1000 : config.autoplayDelay;
         this.config = config;
         if (!this.config.verifyBeforeLoad) {
@@ -742,79 +724,73 @@ var CarouselService = /** @class */ (function () {
         console.error("Carousel module: image load error: " + image);
     };
     CarouselService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* Injectable */])(),
+        core_1.Injectable(),
         __metadata("design:paramtypes", [])
     ], CarouselService);
     return CarouselService;
 }());
-
+exports.CarouselService = CarouselService;
 
 
 /***/ }),
 
 /***/ "./src/app/angular4-carousel/src/app/services/declarations/index.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AnimationConfig; });
+
+Object.defineProperty(exports, "__esModule", { value: true });
 var AnimationConfig;
 (function (AnimationConfig) {
     AnimationConfig[AnimationConfig["APPEAR"] = 0] = "APPEAR";
     AnimationConfig[AnimationConfig["SLIDE_OVERLAP"] = 1] = "SLIDE_OVERLAP";
     AnimationConfig[AnimationConfig["SLIDE"] = 2] = "SLIDE";
-})(AnimationConfig || (AnimationConfig = {}));
+})(AnimationConfig = exports.AnimationConfig || (exports.AnimationConfig = {}));
 
 
 /***/ }),
 
 /***/ "./src/app/angular4-carousel/src/app/services/index.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__carousel_service__ = __webpack_require__("./src/app/angular4-carousel/src/app/services/carousel.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__window_width_service__ = __webpack_require__("./src/app/angular4-carousel/src/app/services/window-width.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__declarations__ = __webpack_require__("./src/app/angular4-carousel/src/app/services/declarations/index.ts");
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__carousel_service__["a"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_2__declarations__["a"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_1__window_width_service__["a"]; });
 
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var carousel_service_1 = __webpack_require__("./src/app/angular4-carousel/src/app/services/carousel.service.ts");
+exports.CarouselService = carousel_service_1.CarouselService;
+var window_width_service_1 = __webpack_require__("./src/app/angular4-carousel/src/app/services/window-width.service.ts");
+exports.WindowWidthService = window_width_service_1.WindowWidthService;
+var declarations_1 = __webpack_require__("./src/app/angular4-carousel/src/app/services/declarations/index.ts");
+exports.AnimationConfig = declarations_1.AnimationConfig;
 
 
 /***/ }),
 
 /***/ "./src/app/angular4-carousel/src/app/services/window-width.service.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WindowWidthService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__ = __webpack_require__("./node_modules/rxjs/_esm5/Observable.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_observable_fromEvent__ = __webpack_require__("./node_modules/rxjs/_esm5/add/observable/fromEvent.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/map.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_startWith__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/startWith.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_distinctUntilChanged__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/distinctUntilChanged.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var Observable_1 = __webpack_require__("./node_modules/rxjs/_esm5/Observable.js");
+__webpack_require__("./node_modules/rxjs/_esm5/add/observable/fromEvent.js");
+__webpack_require__("./node_modules/rxjs/_esm5/add/operator/map.js");
+__webpack_require__("./node_modules/rxjs/_esm5/add/operator/startWith.js");
+__webpack_require__("./node_modules/rxjs/_esm5/add/operator/distinctUntilChanged.js");
 var WindowWidthService = /** @class */ (function () {
     function WindowWidthService() {
     }
     WindowWidthService.prototype.onResize = function (minWidthBreakpoint, scrollBar) {
         var _this = this;
         this.minWidthBreakpoint = minWidthBreakpoint;
-        return __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__["a" /* Observable */].fromEvent(window, 'resize')
+        return Observable_1.Observable.fromEvent(window, 'resize')
             .map(function () { return _this.assertSize(scrollBar); })
             .startWith(this.assertSize(scrollBar))
             .distinctUntilChanged();
@@ -825,11 +801,11 @@ var WindowWidthService = /** @class */ (function () {
         return this.minWidthBreakpoint <= area;
     };
     WindowWidthService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* Injectable */])()
+        core_1.Injectable()
     ], WindowWidthService);
     return WindowWidthService;
 }());
-
+exports.WindowWidthService = WindowWidthService;
 
 
 /***/ }),
@@ -849,24 +825,24 @@ module.exports = "<!--The content below is only a placeholder and can be replace
 /***/ }),
 
 /***/ "./src/app/app.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
         this.title = 'app';
     }
     AppComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+        core_1.Component({
             selector: 'app-root',
             template: __webpack_require__("./src/app/app.component.html"),
             styles: [__webpack_require__("./src/app/app.component.css")]
@@ -874,63 +850,55 @@ var AppComponent = /** @class */ (function () {
     ], AppComponent);
     return AppComponent;
 }());
-
+exports.AppComponent = AppComponent;
 
 
 /***/ }),
 
 /***/ "./src/app/app.module.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("./node_modules/@angular/platform-browser/esm5/platform-browser.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_component__ = __webpack_require__("./src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("./node_modules/@angular/http/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__articles_articles_service__ = __webpack_require__("./src/app/articles/articles.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__articles_articles_component__ = __webpack_require__("./src/app/articles/articles.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__main_page_main_page_component__ = __webpack_require__("./src/app/main_page/main-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_platform_browser_animations__ = __webpack_require__("./node_modules/@angular/platform-browser/esm5/animations.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular4_carousel__ = __webpack_require__("./src/app/angular4-carousel/index.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
-
-
-
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var platform_browser_1 = __webpack_require__("./node_modules/@angular/platform-browser/esm5/platform-browser.js");
+var core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var app_component_1 = __webpack_require__("./src/app/app.component.ts");
+var http_1 = __webpack_require__("./node_modules/@angular/http/esm5/http.js");
+var articles_service_1 = __webpack_require__("./src/app/articles/articles.service.ts");
+var articles_component_1 = __webpack_require__("./src/app/articles/articles.component.ts");
+var main_page_component_1 = __webpack_require__("./src/app/main_page/main-page.component.ts");
+var animations_1 = __webpack_require__("./node_modules/@angular/platform-browser/esm5/animations.js");
+var angular4_carousel_1 = __webpack_require__("./src/app/angular4-carousel/index.ts");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["E" /* NgModule */])({
+        core_1.NgModule({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_6__main_page_main_page_component__["a" /* MainPageComponent */],
-                __WEBPACK_IMPORTED_MODULE_5__articles_articles_component__["a" /* ArticlesComponent */]
+                app_component_1.AppComponent,
+                main_page_component_1.MainPageComponent,
+                articles_component_1.ArticlesComponent
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* HttpModule */],
-                __WEBPACK_IMPORTED_MODULE_8__angular4_carousel__["b" /* CarouselModule */]
+                platform_browser_1.BrowserModule,
+                animations_1.BrowserAnimationsModule,
+                http_1.HttpModule,
+                angular4_carousel_1.CarouselModule
             ],
-            providers: [__WEBPACK_IMPORTED_MODULE_4__articles_articles_service__["a" /* ArticlesService */]],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */]]
+            providers: [articles_service_1.ArticlesService],
+            bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);
     return AppModule;
 }());
-
+exports.AppModule = AppModule;
 
 
 /***/ }),
@@ -950,12 +918,10 @@ module.exports = "<ul>\r\n  <li *ngFor=\"let user of users\">\r\n    {{ user.fir
 /***/ }),
 
 /***/ "./src/app/articles/articles.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ArticlesComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__articles_service__ = __webpack_require__("./src/app/articles/articles.service.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -965,8 +931,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var articles_service_1 = __webpack_require__("./src/app/articles/articles.service.ts");
 var ArticlesComponent = /** @class */ (function () {
     // Create an instance of the DataService through dependency injection
     function ArticlesComponent(_articlesService) {
@@ -977,28 +944,25 @@ var ArticlesComponent = /** @class */ (function () {
             .subscribe(function (res) { return _this.users = res; });
     }
     ArticlesComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+        core_1.Component({
             selector: 'articles',
             template: __webpack_require__("./src/app/articles/articles.component.html"),
             styles: [__webpack_require__("./src/app/articles/articles.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__articles_service__["a" /* ArticlesService */]])
+        __metadata("design:paramtypes", [articles_service_1.ArticlesService])
     ], ArticlesComponent);
     return ArticlesComponent;
 }());
-
+exports.ArticlesComponent = ArticlesComponent;
 
 
 /***/ }),
 
 /***/ "./src/app/articles/articles.service.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ArticlesService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("./node_modules/@angular/http/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/map.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1008,9 +972,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var http_1 = __webpack_require__("./node_modules/@angular/http/esm5/http.js");
+__webpack_require__("./node_modules/rxjs/_esm5/add/operator/map.js");
 var ArticlesService = /** @class */ (function () {
     function ArticlesService(_http) {
         this._http = _http;
@@ -1021,12 +986,12 @@ var ArticlesService = /** @class */ (function () {
             .map(function (result) { return _this.result = result.json().data; });
     };
     ArticlesService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]])
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.Http])
     ], ArticlesService);
     return ArticlesService;
 }());
-
+exports.ArticlesService = ArticlesService;
 
 
 /***/ }),
@@ -1041,17 +1006,15 @@ module.exports = ""
 /***/ "./src/app/main_page/main-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"grid grid-pad\">\r\n  <div class=\"col-1-1\">\r\n    <!-- Add logo and menu -->\r\n  </div>\r\n</div>\r\n<div class=\"grid grid-pad\">\r\n    <div style=\"width: 100%; height: 50vh\">\r\n      <carousel [sources]=\"imageSources\" [config]=\"config\"></carousel>\r\n    </div>\r\n</div>\r\n"
+module.exports = "<div class=\"grid grid-pad\">\r\n  <div class=\"col-1-1\">\r\n    <!-- Add logo and menu -->\r\n  </div>\r\n</div>\r\n<div class=\"grid grid-pad\">\r\n    <div style=\"width: 100%; height: 50vh\">\r\n      <carousel [sources]=\"imageSources\" [config]=\"config\"></carousel>\r\n    </div>\r\n  Screen Width: {{screenWidth}}\r\n</div>\r\n\r\n"
 
 /***/ }),
 
 /***/ "./src/app/main_page/main-page.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MainPageComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular4_carousel__ = __webpack_require__("./src/app/angular4-carousel/index.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1061,8 +1024,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var angular4_carousel_1 = __webpack_require__("./src/app/angular4-carousel/index.ts");
 var MainPageComponent = /** @class */ (function () {
     function MainPageComponent() {
         this.imageSources = [
@@ -1073,14 +1037,15 @@ var MainPageComponent = /** @class */ (function () {
             verifyBeforeLoad: true,
             log: false,
             animation: true,
-            animationType: __WEBPACK_IMPORTED_MODULE_1__angular4_carousel__["a" /* AnimationConfig */].SLIDE,
+            animationType: angular4_carousel_1.AnimationConfig.SLIDE,
             autoplay: true,
             autoplayDelay: 4000,
             stopAutoplayMinWidth: 768
         };
+        this.screenWidth = window.screen.width;
     }
     MainPageComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+        core_1.Component({
             selector: 'main-page',
             template: __webpack_require__("./src/app/main_page/main-page.component.html"),
             styles: [__webpack_require__("./src/app/main_page/main-page.component.css")]
@@ -1089,21 +1054,22 @@ var MainPageComponent = /** @class */ (function () {
     ], MainPageComponent);
     return MainPageComponent;
 }());
-
+exports.MainPageComponent = MainPageComponent;
 
 
 /***/ }),
 
 /***/ "./src/environments/environment.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
+
 // The file contents for the current environment will overwrite these during build.
 // The build system defaults to the dev environment which uses `environment.ts`, but if you do
 // `ng build --env=prod` then `environment.prod.ts` will be used instead.
 // The list of which env maps to which file can be found in `.angular-cli.json`.
-var environment = {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.environment = {
     production: false
 };
 
@@ -1111,22 +1077,19 @@ var environment = {
 /***/ }),
 
 /***/ "./src/main.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__("./node_modules/@angular/platform-browser-dynamic/esm5/platform-browser-dynamic.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__("./src/app/app.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("./src/environments/environment.ts");
 
-
-
-
-if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_7" /* enableProdMode */])();
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var platform_browser_dynamic_1 = __webpack_require__("./node_modules/@angular/platform-browser-dynamic/esm5/platform-browser-dynamic.js");
+var app_module_1 = __webpack_require__("./src/app/app.module.ts");
+var environment_1 = __webpack_require__("./src/environments/environment.ts");
+if (environment_1.environment.production) {
+    core_1.enableProdMode();
 }
-Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */])
+platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule)
     .catch(function (err) { return console.log(err); });
 
 

@@ -23,6 +23,8 @@ export class MainPageComponent {
     stopAutoplayMinWidth: 768
   };
 
+  public screenWidth: number = window.screen.width;
+
   constructor() {
 
   }
