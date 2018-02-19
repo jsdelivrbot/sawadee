@@ -108,7 +108,6 @@ export class CarouselComponent implements OnInit, OnDestroy {
   }
 
   private disableCarouselNavBtns(): void {
-    console.log(screen)
     if (!this.config.animation) {
       return;
     }

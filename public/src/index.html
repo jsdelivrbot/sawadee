@@ -15,10 +15,17 @@
 
 <!-- Hammer JS Touch Emulator: Uncomment if for desktop -->
 <script>
-  console.log(screen)
   if (screen && screen.width < 480) {
-    document.write('<script type="text/javascript" src="http://cdn.rawgit.com/hammerjs/touchemulator/master/touch-emulator.js"><\/script>');
-    TouchEmulator();
+    var head = document.getElementsByTagName('head')[0];
+
+    var script = document.createElement('script');
+    script.src = "http://cdn.rawgit.com/hammerjs/touchemulator/master/touch-emulator.js";
+    script.type = 'text/javascript';
+
+    head.appendChild(script);
+    script.onload = function () {
+      TouchEmulator();
+    };
   }
 </script>
 </html>

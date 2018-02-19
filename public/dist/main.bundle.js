@@ -265,7 +265,6 @@ var CarouselComponent = /** @class */ (function () {
         }, delay);
     };
     CarouselComponent.prototype.disableCarouselNavBtns = function () {
-        console.log(screen);
         if (!this.config.animation) {
             return;
         }
