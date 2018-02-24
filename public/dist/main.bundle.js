@@ -233,8 +233,11 @@ var CarouselComponent = /** @class */ (function () {
     CarouselComponent.prototype.ngAfterViewInit = function () {
         var cslide = document.querySelector("#cslide");
         var hammertime = new Hammer(cslide);
-        hammertime.on('doubletap', function (event) {
-            alert('hello!');
+        hammertime.on('swipeleft', function (event) {
+            alert('hello-l!');
+        });
+        hammertime.on('swiperight', function (event) {
+            alert('hello-r!');
         });
     };
     CarouselComponent.prototype.onChangeSlide = function (direction) {

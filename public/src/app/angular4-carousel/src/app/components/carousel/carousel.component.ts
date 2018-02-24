@@ -71,8 +71,11 @@ export class CarouselComponent implements OnInit, OnDestroy, AfterViewInit {
   public ngAfterViewInit(): void {
     let cslide = document.querySelector("#cslide");
     let hammertime = new Hammer(cslide);
-    hammertime.on('doubletap', function(event) {
-      alert('hello!');
+    hammertime.on('swipeleft', function(event) {
+      alert('hello-l!');
+    });
+    hammertime.on('swiperight', function(event) {
+      alert('hello-r!');
     });
   }
 
