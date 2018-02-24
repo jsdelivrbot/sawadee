@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnDestroy, ViewChild, forwardRef } from '@angular/core';
+import {Component, OnInit, Input, OnDestroy, ViewChild, forwardRef, AfterViewInit} from '@angular/core';
 import 'rxjs/add/operator/takeWhile';
 
 import { CarouselService, ICarouselConfig, WindowWidthService } from '../../services';
@@ -12,7 +12,7 @@ import { CarouselHandlerDirective } from '../../directives';
   templateUrl: 'carousel.template.html',
   styleUrls: ['assets/carousel.styles.scss']
 })
-export class CarouselComponent implements OnInit, OnDestroy {
+export class CarouselComponent implements OnInit, OnDestroy, AfterViewInit {
   @Input() private sources: string[];
   @Input() private config: ICarouselConfig;
 
@@ -66,6 +66,14 @@ export class CarouselComponent implements OnInit, OnDestroy {
         }
       );
     }
+  }
+
+  public ngAfterViewInit(): void {
+    let cslide = document.querySelector("#cslide");
+    let hammertime = new Hammer(cslide);
+    hammertime.on('doubletap', function(event) {
+      alert('hello!');
+    });
   }
 
   public onChangeSlide(direction: string): void {
