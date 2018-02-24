@@ -319,7 +319,7 @@ exports.CarouselComponent = CarouselComponent;
 /***/ "./src/app/angular4-carousel/src/app/components/carousel/carousel.template.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"carousel-wrapper\" appCarouselHandler (handleAutoplay)=\"onHandleAutoplay($event)\">\r\n  <carousel-slide\r\n       *ngFor=\"let img of loadedImages; let i = index\"\r\n       [src]=\"img\"\r\n       [slideNo]=\"i\"\r\n       (swiperight)=\"swipe('next')\"\r\n       (swipeleft)=\"swipe('prev')\"\r\n       [isHidden]=\"i !== 0\">\r\n  </carousel-slide>\r\n\r\n  <carousel-pins\r\n    *ngIf=\"galleryLength > 1\"\r\n    [images]=\"loadedImages\"\r\n    [currentSlide]=\"currentSlide\"\r\n    (changeSlide)=\"onChangeSlideIndex($event);\">\r\n  </carousel-pins>\r\n\r\n  <carousel-arrows\r\n    *ngIf=\"galleryLength > 1 && screenWidth > 480\"\r\n    (changeSlide)=\"onChangeSlide($event);\"></carousel-arrows>\r\n</div>\r\n"
+module.exports = "<div class=\"carousel-wrapper\" appCarouselHandler (handleAutoplay)=\"onHandleAutoplay($event)\">\r\n  <carousel-slide\r\n       *ngFor=\"let img of loadedImages; let i = index\"\r\n       [src]=\"img\"\r\n       [slideNo]=\"i\"\r\n       (swiperight)=\"onChangeSlide('next')\"\r\n       (swipeleft)=\"onChangeSlide('prev')\"\r\n       [isHidden]=\"i !== 0\">\r\n  </carousel-slide>\r\n\r\n  <carousel-pins\r\n    *ngIf=\"galleryLength > 1\"\r\n    [images]=\"loadedImages\"\r\n    [currentSlide]=\"currentSlide\"\r\n    (changeSlide)=\"onChangeSlideIndex($event);\">\r\n  </carousel-pins>\r\n\r\n  <carousel-arrows\r\n    *ngIf=\"galleryLength > 1 && screenWidth > 480\"\r\n    (changeSlide)=\"onChangeSlide($event);\"></carousel-arrows>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -879,6 +879,8 @@ var articles_component_1 = __webpack_require__("./src/app/articles/articles.comp
 var main_page_component_1 = __webpack_require__("./src/app/main_page/main-page.component.ts");
 var animations_1 = __webpack_require__("./node_modules/@angular/platform-browser/esm5/animations.js");
 var angular4_carousel_1 = __webpack_require__("./src/app/angular4-carousel/index.ts");
+__webpack_require__("./node_modules/hammerjs/hammer.js");
+__webpack_require__("./node_modules/hammer-timejs/hammer-time.js");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
