@@ -230,23 +230,6 @@ var CarouselComponent = /** @class */ (function () {
             });
         }
     };
-    CarouselComponent.prototype.ngAfterViewInit = function () {
-        var cslide = document.querySelector("#cslide");
-        var hammertime = new Hammer(cslide);
-        hammertime.on("drag swipe", function (ev) {
-            // only horizontal swipe
-            if (Hammer.utils.isVertical(ev.gesture.direction)) {
-                return;
-            }
-            // prevent scrolling, so the drag/swipe handler is getting called
-            ev.gesture.preventDefault();
-            // swipe!
-            if (ev.type == 'swipe') {
-                // your magic here....
-                alert('ksda');
-            }
-        });
-    };
     CarouselComponent.prototype.onChangeSlide = function (direction) {
         if (direction === 'prev') {
             this.currentSlide = this.currentSlide === 0 ? this.loadedImages.length - 1 : --this.currentSlide;
@@ -256,9 +239,6 @@ var CarouselComponent = /** @class */ (function () {
         }
         this.carouselHandlerDirective.setNewSlide(this.currentSlide, direction);
         this.disableCarouselNavBtns();
-    };
-    CarouselComponent.prototype.swipe = function (direction) {
-        alert(direction);
     };
     CarouselComponent.prototype.onChangeSlideIndex = function (index) {
         if (index === this.currentSlide) {
@@ -336,7 +316,7 @@ exports.CarouselComponent = CarouselComponent;
 /***/ "./src/app/angular4-carousel/src/app/components/carousel/carousel.template.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"carousel-wrapper\" appCarouselHandler (handleAutoplay)=\"onHandleAutoplay($event)\">\r\n  <carousel-slide\r\n    id=\"cslide\"\r\n       *ngFor=\"let img of loadedImages; let i = index\"\r\n       [src]=\"img\"\r\n       [slideNo]=\"i\"\r\n\r\n       [isHidden]=\"i !== 0\">\r\n  </carousel-slide>\r\n\r\n  <carousel-pins\r\n    *ngIf=\"galleryLength > 1\"\r\n    [images]=\"loadedImages\"\r\n    [currentSlide]=\"currentSlide\"\r\n    (changeSlide)=\"onChangeSlideIndex($event);\">\r\n  </carousel-pins>\r\n\r\n  <carousel-arrows\r\n    *ngIf=\"galleryLength > 1 && screenWidth > 480\"\r\n    (changeSlide)=\"onChangeSlide($event);\"></carousel-arrows>\r\n</div>\r\n"
+module.exports = "<div class=\"carousel-wrapper\" appCarouselHandler (handleAutoplay)=\"onHandleAutoplay($event)\">\r\n  <carousel-slide\r\n       *ngFor=\"let img of loadedImages; let i = index\"\r\n       [src]=\"img\"\r\n       [slideNo]=\"i\"\r\n       [isHidden]=\"i !== 0\">\r\n  </carousel-slide>\r\n\r\n  <carousel-pins\r\n    *ngIf=\"galleryLength > 1\"\r\n    [images]=\"loadedImages\"\r\n    [currentSlide]=\"currentSlide\"\r\n    (changeSlide)=\"onChangeSlideIndex($event);\">\r\n  </carousel-pins>\r\n\r\n  <carousel-arrows\r\n    *ngIf=\"galleryLength > 1\"\r\n    (changeSlide)=\"onChangeSlide($event);\"></carousel-arrows>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -896,8 +876,6 @@ var articles_component_1 = __webpack_require__("./src/app/articles/articles.comp
 var main_page_component_1 = __webpack_require__("./src/app/main_page/main-page.component.ts");
 var animations_1 = __webpack_require__("./node_modules/@angular/platform-browser/esm5/animations.js");
 var angular4_carousel_1 = __webpack_require__("./src/app/angular4-carousel/index.ts");
-__webpack_require__("./node_modules/hammerjs/hammer.js");
-__webpack_require__("./node_modules/hammer-timejs/hammer-time.js");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }

@@ -12,7 +12,7 @@ import { CarouselHandlerDirective } from '../../directives';
   templateUrl: 'carousel.template.html',
   styleUrls: ['assets/carousel.styles.scss']
 })
-export class CarouselComponent implements OnInit, OnDestroy, AfterViewInit {
+export class CarouselComponent implements OnInit, OnDestroy {
   @Input() private sources: string[];
   @Input() private config: ICarouselConfig;
 
@@ -68,28 +68,6 @@ export class CarouselComponent implements OnInit, OnDestroy, AfterViewInit {
     }
   }
 
-  public ngAfterViewInit(): void {
-    let cslide = document.querySelector("#cslide");
-    let hammertime = new Hammer(cslide);
-
-    hammertime.on("drag swipe", function(ev) {
-      // only horizontal swipe
-      if(Hammer.utils.isVertical(ev.gesture.direction)) {
-        return;
-      }
-
-      // prevent scrolling, so the drag/swipe handler is getting called
-      ev.gesture.preventDefault();
-
-      // swipe!
-      if(ev.type == 'swipe') {
-        // your magic here....
-        alert('ksda')
-      }
-
-    });
-  }
-
   public onChangeSlide(direction: string): void {
     if (direction === 'prev') {
       this.currentSlide = this.currentSlide === 0 ? this.loadedImages.length - 1 : --this.currentSlide;
@@ -98,10 +76,6 @@ export class CarouselComponent implements OnInit, OnDestroy, AfterViewInit {
     }
     this.carouselHandlerDirective.setNewSlide(this.currentSlide, direction);
     this.disableCarouselNavBtns();
-  }
-
-  public swipe(direction: string) {
-    alert(direction)
   }
 
   public onChangeSlideIndex(index: number): void {

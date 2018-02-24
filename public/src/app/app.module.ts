@@ -10,10 +10,6 @@ import {MainPageComponent} from "./main_page/main-page.component";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { CarouselModule } from './angular4-carousel';
 
-import 'hammerjs';
-import 'hammer-timejs';
-
-
 @NgModule({
   declarations: [
     AppComponent,
