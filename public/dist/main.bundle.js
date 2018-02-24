@@ -233,13 +233,18 @@ var CarouselComponent = /** @class */ (function () {
     CarouselComponent.prototype.ngAfterViewInit = function () {
         var cslide = document.querySelector("#cslide");
         var hammertime = new Hammer(cslide);
-        hammertime.on('swipeleft', function (a, b, c) {
-            // this.onChangeSlide('prev')
-            alert('prev');
-        });
-        hammertime.on('swiperight', function (a, b, c) {
-            // this.onChangeSlide('next')
-            alert('next');
+        hammertime.on("drag swipe", function (ev) {
+            // only horizontal swipe
+            if (Hammer.utils.isVertical(ev.gesture.direction)) {
+                return;
+            }
+            // prevent scrolling, so the drag/swipe handler is getting called
+            ev.gesture.preventDefault();
+            // swipe!
+            if (ev.type == 'swipe') {
+                // your magic here....
+                alert('ksda');
+            }
         });
     };
     CarouselComponent.prototype.onChangeSlide = function (direction) {

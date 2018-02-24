@@ -72,14 +72,21 @@ export class CarouselComponent implements OnInit, OnDestroy, AfterViewInit {
     let cslide = document.querySelector("#cslide");
     let hammertime = new Hammer(cslide);
 
-    hammertime.on('swipeleft', function(a,b,c) {
-      // this.onChangeSlide('prev')
-      alert('prev')
-    });
+    hammertime.on("drag swipe", function(ev) {
+      // only horizontal swipe
+      if(Hammer.utils.isVertical(ev.gesture.direction)) {
+        return;
+      }
 
-    hammertime.on('swiperight', function(a,b,c) {
-      // this.onChangeSlide('next')
-      alert('next')
+      // prevent scrolling, so the drag/swipe handler is getting called
+      ev.gesture.preventDefault();
+
+      // swipe!
+      if(ev.type == 'swipe') {
+        // your magic here....
+        alert('ksda')
+      }
+
     });
   }
 
